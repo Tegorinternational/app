@@ -49,9 +49,9 @@
   
   <!-- links -->
   <link rel="canonical" href="https://tegorinternational.github.io/app/public/contact-form.html" />
-  <link rel="stylesheet" href="app/css/tailwind.css">
-  <link rel="stylesheet" href="app/css/style.css">
-  <link rel="icon" href="app/images/fevicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/app/css/tailwind.css">
+  <link rel="stylesheet" href="/app/css/style.css">
+  <link rel="icon" href="/app/images/fevicon.png" type="image/x-icon">
   
   <!-- scripts -->
   <!-- tailwind config -->
@@ -80,7 +80,7 @@
 <body>
   <header></header>
   <script>
-    fetch("app/includes/header.html")
+    fetch("/app/includes/header.html")
       .then(response => {
         return response.text()
       })
@@ -90,7 +90,7 @@
   </script>
   <sidebar></sidebar>
   <script>
-    fetch("app/includes/sidebar.html")
+    fetch("/app/includes/sidebar.html")
       .then(response => {
         return response.text()
       })
@@ -319,7 +319,7 @@
   </section>
   <footer></footer>
   <script>
-    fetch("app/includes/copyright.html")
+    fetch("/app/includes/copyright.html")
     .then(response => {
       return response.text()
     })
