@@ -94,11 +94,49 @@
   
   
   
+  <style>
+    .back-top-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      backdrop-filter: blur(2px);
+      display: grid;
+      place-items: center;
+      border-radius: 100%;
+      border: 3px solid #0D47A1;
+      color: #0D47A1;
+      transition: 0.35s ease;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 4;
+    }
+    
+    .back-top-btn:is(:hover, :focus-visible) {
+      box-shadow: var(--shadow-2);
+    }
+    
+    .back-top-btn.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+  </style>
+  
+  
   
   <title>TegorInternational - Graphics & Web development Agency</title>
 </head>
 
 <body>
+  
+  
+  <section class="w-full h-screen fixed" style="background-image: url('/images/bg.png'); background-size: cover; background-repeat: no-repeat; z-index: -2; opacity: 0.7;">
+  </section>
+  
+  
+  
   <!-- Navigation -->
   <header translate="no" class="background-radial-gradient text-gray-600 body-font shadow-lg fixed w-full z-40">
     <div class="container mx-auto flex flex-wrap px-5 py-3">
@@ -292,20 +330,6 @@
   </section>
   <!-- /Header -->
   
-  <!-- Flip_animation 
-  <section class="text-gray-600 body-font flip-anim pt-14">
-    <div class="container px-5 py-10 mx-auto flex flex-wrap text-center">
-      <div class="w-full text-3xl" id="animation">We are full service
-        <div id=flip>
-          <div><div>Graphic designing</div></div>
-          <div><div>Web designing</div></div>
-          <div><div>Logo Designing</div></div>
-        </div>
-        Company!
-      </div>
-    </div>
-  </section>-->
-  
   <!-- Description -->
   <section class="text-gray-600 body-font">
     <div class="container mx-auto flex px-5 pb-16 pt-10 md:flex-row flex-col items-center">
@@ -358,18 +382,10 @@
     <div class="flex flex-wrap -m-4">
       
       <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
-        <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden bg-gray-50" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="700ms">
+        <div class="h-full p-6 rounded-lg border border-white flex flex-col relative overflow-hidden bg-gray-100/40" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="700ms">
       
-          <div class="flex pb-4 mb-4 border-b border-gray-200 leading-none">
-            <div class="w-12 h-12 my-auto border-2 border-gray-300 rounded-full" >
-              <!-- <lord-icon
-                src="https://cdn.lordicon.com/wloilxuq.json"
-                trigger="loop"
-                delay="2000"
-                colors="primary:#1E90FF,secondary:#FF6A00"
-                class="w-full h-full"
-                style="transform: rotate(35deg)">
-              </lord-icon> -->
+          <div class="flex pb-4 mb-4 border-b border-white leading-none">
+            <div class="w-12 h-12 my-auto border-2 border-white rounded-full" >
               <img class="w-full rounded-full" src="/app/icons/12-layes-outline.gif" alt="" loading="lazy" />
             </div>
             <span class="text-3xl font-medium text-gray-900 my-auto ml-2">Graphic designing</span>
@@ -382,17 +398,10 @@
       
       
       <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
-        <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden bg-gray-50" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="700ms">
+        <div class="h-full p-6 rounded-lg border border-white flex flex-col relative overflow-hidden bg-gray-100/40" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="700ms">
       
-          <div class="flex pb-4 mb-4 border-b border-gray-200 leading-none">
-            <div class="w-12 h-12 my-auto border-2 border-gray-300 rounded-full" >
-              <!-- <lord-icon
-                src="https://cdn.lordicon.com/joeivjls.json"
-                trigger="loop"
-                delay="2000"
-                colors="primary:#1E90FF,secondary:#FF6A00"
-                class="w-full h-full">
-              </lord-icon> -->
+          <div class="flex pb-4 mb-4 border-b border-white leading-none">
+            <div class="w-12 h-12 my-auto border-2 border-white rounded-full" >
               <img class="w-full rounded-full" src="/app/icons/35-edit-outline.gif" alt="" style="transform: rotate(35deg);" loading="lazy" />
             </div>
             <span class="text-3xl font-medium text-gray-900 my-auto ml-2">Logo Designing</span>
@@ -405,17 +414,10 @@
       
       
       <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
-        <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden bg-gray-50" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="700ms">
+        <div class="h-full p-6 rounded-lg border border-white flex flex-col relative overflow-hidden bg-gray-100/40" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="700ms">
       
-          <div class="flex pb-4 mb-4 border-b border-gray-200 leading-none">
-            <div class="w-12 h-12 my-auto border-2 border-gray-300 rounded-full" >
-              <!-- <lord-icon
-                src="https://cdn.lordicon.com/jvucoldz.json"
-                trigger="loop"
-                delay="2000"
-                colors="primary:#1056C3,secondary:#FF6A00"
-                class="w-full h-full">
-              </lord-icon> -->
+          <div class="flex pb-4 mb-4 border-b border-white leading-none">
+            <div class="w-12 h-12 my-auto border-2 border-white rounded-full" >
               <img class="w-full rounded-full" src="/app/icons/1388-page-view-quilt-outline.gif" alt="" loading="lazy" />
             </div>
             <span class="text-3xl font-medium text-gray-900 my-auto ml-2">Web Development</span>
@@ -428,17 +430,10 @@
       
       
       <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
-        <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden bg-gray-50" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="700ms">
+        <div class="h-full p-6 rounded-lg border border-white flex flex-col relative overflow-hidden bg-gray-100/40" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="700ms">
       
-          <div class="flex pb-4 mb-4 border-b border-gray-200 leading-none">
-            <div class="w-12 h-12 my-auto border-2 border-gray-300 rounded-full" >
-              <!-- <lord-icon
-                src="https://cdn.lordicon.com/fhtaantg.json"
-                trigger="loop"
-                delay="2000"
-                colors="primary:#1E90FF,secondary:#FF6A00"
-                class="w-full h-full">
-              </lord-icon> -->
+          <div class="flex pb-4 mb-4 border-b border-white leading-none">
+            <div class="w-12 h-12 my-auto border-2 border-white rounded-full" >
               <img class="w-full rounded-full" src="/app/icons/187-suitcase-outline.gif" alt="" loading="lazy" />
             </div>
             <span class="text-3xl font-medium text-gray-900 my-auto ml-2">Google business setup</span>
@@ -456,137 +451,67 @@
   </section>
   <!-- /Services -->
   
+  
+  
   <!-- testimonial -->
-
-  <section class="text-gray-600 body-font">
-
+<section class="text-gray-600 body-font dark:bg-gray-900 ">
     <div class="container px-5 py-24 mx-auto">
-      
-      <div class="flex flex-col text-center w-full mb-14">
-
-      <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-tegor-500">Testimonial</h1>
-
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-500">Let's hear what our clients want to say.</p>
-
+      <div class="flex flex-col text-center w-full mb-8">
+      <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Read our <br> awesome <span class="text-tegor-300">Feedback</span></h1>
     </div>
-
-      <div class="bg-gray-100 rounded-lg p-5">
-
+      <div class="bg-gray-100/40 rounded-lg p-5">
         <div id="carouselExampleCaptions" class="carousel slide relative carousel-dark" data-bs-ride="carousel">
-
   <div class="carousel-inner relative w-full overflow-hidden">
-
     
-
+    <!-- 1 -->
     <div class="carousel-item active relative float-left w-full text-center">
-
       <div class="mb-2 flex justify-center">
-
         <img
-
           src="https://tegorinternational.github.io/GitHub.io/Images/20220425_213713.png"
-
           class="rounded-full w-24 h-24 shadow-lg border-2 border-tegor-300"
-
           alt="smaple image"
-
         />
-
       </div>
-
       <p class="text-gray-500 text-lg text-black font-medium leading-4">Akshansh Sharma</p>
-
-      <p class="text-gray-500 text-base">CEO - Mamta Shiksha samiti</p>
-
+      <p class="text-gray-500 text-xs">CEO - Mamta Shiksha samiti</p>
       <hr class="w-14 bg-tegor-200 mx-auto h-1 mb-2 rounded-lg my-3">
-
-      <p class="text-xl italic mx-auto text-gray-700 max-w-4xl">
-
+      <p class="text-sm italic mx-auto text-gray-700 max-w-4xl">
         "Tegor International's work is more than my expectations beautiful graphics with appropriate design and Satisfactory work."
-
       </p>
-
     </div>
-
     
-
+    <!-- 2 -->
     <div class="carousel-item relative float-left w-full text-center">
-
       <div class="mb-2 flex justify-center">
-
         <img
-
-          src="https://tegorinternational.github.io/GitHub.io/Images/IMG_20220425_222938.jpg"
-
-          class="rounded-full w-24 h-24 shadow-lg border-2 border-tegor-300"
-
-          alt="smaple image"
-
-        />
-
-      </div>
-
-      <p class="text-gray-500 text-lg text-black font-medium leading-4">Sandeep</p>
-
-      <p class="text-gray-500 text-base">Youtube</p>
-
-      <hr class="w-14 bg-tegor-200 mx-auto h-1 mb-2 rounded-lg my-3">
-
-      <p class="text-xl italic mx-auto text-gray-700 max-w-4xl">
-
-        "Logo TI designed for my business looks great & I will definitely promote his services to others in need. I appreciated the extra time and effort he spent getting the logo the way we wanted it."
-
-      </p>
-
-    </div>
-
-    
-
-    <div class="carousel-item relative float-left w-full text-center">
-
-      <div class="mb-2 flex justify-center">
-
-        <img
-
           src="https://tegorinternational.github.io/GitHub.io/Images/20211003_144528.png"
-
           class="rounded-full w-24 h-24 shadow-lg border-2 border-tegor-300"
-
           alt="smaple image"
-
         />
-
       </div>
-
-      <p class="text-gray-500 text-lg text-black font-medium leading-4">Hritik Dubey</p>
-
-      <p class="text-gray-500 text-base">Indofarm - Dubey traders</p>
-
+      <p class="text-gray-500 text-lg text-black font-medium leading-4">Hrithik Dubey</p>
+      <p class="text-gray-500 text-xs">Indofarm - Dubey Traders</p>
       <hr class="w-14 bg-tegor-200 mx-auto h-1 mb-2 rounded-lg my-3">
-
-      <p class="text-xl italic mx-auto text-gray-700 max-w-4xl">
-
+      <p class="text-sm italic mx-auto text-gray-700 max-w-4xl">
         "Tegor International is wonderfully creative and responsive.They translates ideas into beautiful visuals, and he does so in a timely and professional manner. Highly recommended."
-
       </p>
-
     </div>
-
     
-
+    <!-- 3 -->
     
-
+    
+    
   </div>
-
 </div>
-
       </div>
-
     </div>
-
   </section>
-
-  <!-- /testimonial -->
+  
+  
+  
+  
+  
+  
   
   
   <!-- FAQ's -->
@@ -601,7 +526,7 @@
           
           <ul class="flex flex-wrap w-full">
             
-            <li class="bg-white my-2 w-full bg-gray-200 rounded-lg bg-opacity-75" x-data="accordion(1)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
+            <li class="bg-white/40 my-2 w-full rounded-lg bg-opacity-75" x-data="accordion(1)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
               <h2
                 @click="handleClick()"
                 class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
@@ -626,7 +551,7 @@
               </div>
             </li>
             
-            <li class="bg-white my-2 w-full bg-gray-200 rounded-lg bg-opacity-75" x-data="accordion(2)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
+            <li class="bg-white/40 my-2 w-full  rounded-lg bg-opacity-75" x-data="accordion(2)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
               <h2
                 @click="handleClick()"
                 class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
@@ -651,7 +576,7 @@
               </div>
             </li>
             
-            <li class="bg-white my-2 w-full bg-gray-200 rounded-lg bg-opacity-75" x-data="accordion(3)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
+            <li class="bg-white/40 my-2 w-full rounded-lg bg-opacity-75" x-data="accordion(3)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
               <h2
                 @click="handleClick()"
                 class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
@@ -676,7 +601,7 @@
               </div>
             </li>
             
-            <li class="bg-white my-2 w-full bg-gray-200 rounded-lg bg-opacity-75" x-data="accordion(4)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
+            <li class="bg-white/40 my-2 w-full rounded-lg bg-opacity-75" x-data="accordion(4)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
               <h2
                 @click="handleClick()"
                 class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
@@ -701,7 +626,7 @@
               </div>
             </li>
             
-            <li class="bg-white my-2 w-full bg-gray-200 rounded-lg bg-opacity-75" x-data="accordion(5)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
+            <li class="bg-white/40 my-2 w-full rounded-lg bg-opacity-75" x-data="accordion(5)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
               <h2
                 @click="handleClick()"
                 class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
@@ -726,7 +651,7 @@
               </div>
             </li>
             
-            <li class="bg-white my-2 w-full bg-gray-200 rounded-lg bg-opacity-75" x-data="accordion(6)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
+            <li class="bg-white/40 my-2 w-full rounded-lg bg-opacity-75" x-data="accordion(6)" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="600ms">
               <h2
                 @click="handleClick()"
                 class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
@@ -764,7 +689,7 @@
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap -m-4">
         <div class="p-4 w-full">
-          <div class="w-full bg-gray-200 px-8 py-10 bg-opacity-75 rounded-lg overflow-hidden text-left relative" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="1000ms">
+          <div class="w-full bg-gray-100/30 px-8 py-10 bg-opacity-75 rounded-lg overflow-hidden text-left relative" data-mdb-ripple="true" data-mdb-ripple-color="#1E90FF" data-mdb-ripple-duration="1000ms">
             <h1 class="title-font sm:text-2xl text-2xl font-bold text-gray-900 mb-2">Ready to take your brand to the next level?</h1>
             <p class="leading-relaxed mb-3">Awesome! Let's get started.</p>
             <a class="text-white inline-flex bg-tegor-500 py-2 px-10 rounded">Contact
@@ -836,7 +761,7 @@
         <div class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-left items-end md:justify-start">
           <div class="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
             <label for="footer-field" class="leading-7 text-sm text-gray-600">Email</label>
-            <input type="email" id="footer-field" name="footer-field" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            <input type="email" id="footer-field" name="footer-field" class="w-full bg-gray-100/20 bg-opacity-50 rounded border border-white focus:bg-transparent focus:ring-2 focus:ring-tegor-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
           </div>
           <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-tegor-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Subscribe</button>
         </div>
@@ -846,7 +771,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-gray-100">
+  <div class="bg-gray-100/30">
     <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
         <img class="w-10" src="/app/images/icon.png" alt="" />
@@ -858,9 +783,9 @@
      var getTwodigitYear = getYear.toString().substring(0); // get last two digits from year
      document.write( getTwodigitYear ); 
   </script> Tegorinternational —
-        <a href="https://twitter.com/tegorintgfx" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">Rurendra Tegor</a>
+        <a href="#!" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">Rurendra Tegor</a>
       </p>
-      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start hidden">
         <a href="https://www.facebook.com/rurendra.tegor" class="text-gray-500">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
   <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
@@ -886,6 +811,13 @@
   </div>
   </footer>
   <!-- /Footer -->
+  
+  
+  <!-- backTopBtn -->
+   <a href="#" class="back-top-btn" aria-label="back to top" data-back-top-btn> <span class="text-3xl"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+         <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+       </svg></span>
+   </a>
   
   <!-- FAQ's script -->
   <script>
@@ -928,6 +860,19 @@
       document.getElementById("mySidenav").style.width = "0"; 
       
     } 
+  </script>
+  <script>
+    const backTopBtn = document.querySelector("[data-back-top-btn]");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    
+    backTopBtn.classList.add("active");
+  } else {
+    
+    backTopBtn.classList.remove("active");
+  }
+});
   </script>
   
   <script src="/app/index.js"></script>
